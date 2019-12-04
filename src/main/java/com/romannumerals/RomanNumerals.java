@@ -34,7 +34,7 @@ public class RomanNumerals {
 		}*/
 		
 		if(naturalNumber<=3){
-			return sumI(naturalNumber);
+			return sumI(1,naturalNumber,"");
 		}
 		
 		switch (naturalNumber) {
@@ -43,22 +43,14 @@ public class RomanNumerals {
 		}
 
 		if(naturalNumber<=8)
-			return sumIfromV(naturalNumber);
+			return sumI(6,naturalNumber,"V");
 		
 		return null;
 	}
 	
-	private String sumI(int natualNumber) {
-		String result="";
-		for(int i=1;i<=natualNumber;i++)
-			result+="I";
-		return result;
-	}
-	
-	private String sumIfromV(int natualNumber) {
-		String result="V";
-		for(int i=6;i<=natualNumber;i++)
-			result+="I";
-		return result;
+	private String sumI(int init, int natualNumber, String symbol) {
+		for(int i=init;i<=natualNumber;i++)
+			symbol+="I";
+		return symbol;
 	}
 }
